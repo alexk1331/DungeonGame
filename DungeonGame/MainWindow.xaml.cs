@@ -23,6 +23,29 @@ namespace DungeonGame
         public MainWindow()
         {
             InitializeComponent();
+            SettingsApply.setproperties();
+            SettingsApply.applyres(this);
+            SettingsApply.applylang(this);
         }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+            WinSettings sett = new WinSettings();
+            sett.Owner = this;
+            SettingsApply.applyres(sett);
+            this.Hide();
+            
+            sett.ShowDialog();
+            SettingsApply.applyres(this);
+            this.Show();
+            
+        }
+
+        
     }
 }

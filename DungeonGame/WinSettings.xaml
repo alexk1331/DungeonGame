@@ -1,0 +1,40 @@
+﻿<Window x:Class="DungeonGame.WinSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DungeonGame"
+        mc:Ignorable="d"
+        Title="WinSettings" Height="300" Width="500" Name="SettingsWindow"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal"></StackPanel>
+        <StackPanel>
+            <TextBlock Name="choose_resolution_text">Choose screen resolution</TextBlock>
+            <ComboBox Name="res_list" Margin="0 0 80 0">
+                <TextBlock>1024x768</TextBlock>
+                <TextBlock>1280x720</TextBlock>
+                <TextBlock>1280x768</TextBlock>
+                <TextBlock>1280x800</TextBlock>
+                <TextBlock>1280x1024</TextBlock>
+                <TextBlock>1360x768</TextBlock>
+                <TextBlock>1366x768</TextBlock>
+                <TextBlock>1680x1050</TextBlock>
+                <TextBlock>1920x1080</TextBlock>
+            </ComboBox>
+            <CheckBox Name="fullscreen_check" HorizontalAlignment="Right" Margin="0 10 5 0">Fullscreen</CheckBox>
+        </StackPanel>
+        
+        <Button Grid.Row="1" Name="close_button"  Content="Close" Margin ="40 10 50 10" Click="cancel_button_Click" />
+        <Button  Grid.Row="1" Grid.Column="1" Name="save_changes_button" Content="Save changes" Margin ="50 10 40 10" Click="save_changes_button_Click"/>
+
+    </Grid>
+</Window>

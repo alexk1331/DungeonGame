@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DungeonGame"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" 
+        Name="MainMenu"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"  >
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="0.5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="0.3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button Name="new_game_button" Grid.Column="1" Grid.Row="1" Content="NewGame"  />
+        <Button Name="load_game_button" Grid.Column="1" Grid.Row="3" Content="LoadGame"  />
+        <Button Name="settings_button" Grid.Column="1" Grid.Row="5" Content="Settings"  Click="Settings_Click"/>
+        <Button Name="exit_button" Grid.Column="1" Grid.Row="7" Content="Exit"  Click="Exit_Click"/>
     </Grid>
 </Window>
