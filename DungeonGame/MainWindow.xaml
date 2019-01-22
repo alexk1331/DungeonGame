@@ -25,7 +25,7 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="0.3*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Button Name="new_game_button" Grid.Column="1" Grid.Row="1" Content="NewGame"  />
+        <Button Name="new_game_button" Grid.Column="1" Grid.Row="1" Content="NewGame" Click="New_Game_Click" />
         <Button Name="load_game_button" Grid.Column="1" Grid.Row="3" Content="LoadGame"  />
         <Button Name="settings_button" Grid.Column="1" Grid.Row="5" Content="Settings"  Click="Settings_Click"/>
         <Button Name="exit_button" Grid.Column="1" Grid.Row="7" Content="Exit"  Click="Exit_Click"/>

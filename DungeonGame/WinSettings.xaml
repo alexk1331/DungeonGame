@@ -16,10 +16,9 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Horizontal"></StackPanel>
-        <StackPanel>
-            <TextBlock Name="choose_resolution_text">Choose screen resolution</TextBlock>
-            <ComboBox Name="res_list" Margin="0 0 80 0">
+        <StackPanel Name="mmm">
+            <TextBlock Name="choose_resolution_text" >Choose screen resolution</TextBlock>
+            <ComboBox Name="res_list" Margin="0 0 180 0">
                 <TextBlock>1024x768</TextBlock>
                 <TextBlock>1280x720</TextBlock>
                 <TextBlock>1280x768</TextBlock>
@@ -32,7 +31,15 @@
             </ComboBox>
             <CheckBox Name="fullscreen_check" HorizontalAlignment="Right" Margin="0 10 5 0">Fullscreen</CheckBox>
         </StackPanel>
-        
+
+        <StackPanel Grid.Column="1">
+            <TextBlock Name="choose_language_text">Select language</TextBlock>
+            <ComboBox Name="lang_list" Margin="0 0 80 0">
+                <TextBlock Name="english">English</TextBlock>
+                <TextBlock Name="ukrainian">Українська</TextBlock>
+            </ComboBox>
+        </StackPanel>
+
         <Button Grid.Row="1" Name="close_button"  Content="Close" Margin ="40 10 50 10" Click="cancel_button_Click" />
         <Button  Grid.Row="1" Grid.Column="1" Name="save_changes_button" Content="Save changes" Margin ="50 10 40 10" Click="save_changes_button_Click"/>
 

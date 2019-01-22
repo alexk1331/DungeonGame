@@ -56,8 +56,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Account.cs" />
+    <Compile Include="Action.cs" />
+    <Compile Include="AUnit.cs" />
+    <Compile Include="Effect.cs" />
+    <Compile Include="GlobalMainViewModel.cs" />
+    <Compile Include="Inventory.cs" />
+    <Compile Include="Map.cs" />
+    <Compile Include="MapTile.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="ProgramSett.cs" />
     <Compile Include="SettingsApply.cs" />
+    <Compile Include="Stats.cs" />
+    <Compile Include="WindowGameMain.xaml.cs">
+      <DependentUpon>WindowGameMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowMapViewModel.cs" />
     <Compile Include="WinSettings.xaml.cs">
       <DependentUpon>WinSettings.xaml</DependentUpon>
     </Compile>
@@ -73,6 +87,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="WindowGameMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WinSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

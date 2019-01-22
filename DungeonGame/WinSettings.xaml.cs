@@ -35,6 +35,18 @@ namespace DungeonGame
                 i++;
             }
             fullscreen_check.IsChecked = Properties.Settings.Default.Fullscreen;
+
+            i = 0;
+            foreach (TextBlock ic in lang_list.Items)
+            {
+                string res = Properties.Settings.Default.Language;
+                if (ic.Name == res)
+                {
+                    lang_list.SelectedIndex = i;
+                    break;
+                }
+                i++;
+            }
         }
 
         private void cancel_button_Click(object sender, RoutedEventArgs e)
@@ -44,9 +56,11 @@ namespace DungeonGame
 
         private void save_changes_button_Click(object sender, RoutedEventArgs e)
         {
-            SettingsApply.psettings.setsettings(res_list.Text, "english", (bool)fullscreen_check.IsChecked);
+            TextBlock lang = (TextBlock)lang_list.SelectedItem;
+            SettingsApply.psettings.setsettings(res_list.Text, lang.Name, (bool)fullscreen_check.IsChecked);
             
             SettingsApply.globalsettingsapply();
         }
+
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Runtime.Serialization.Json;
 using System.Runtime.Serialization;
 
@@ -77,6 +78,21 @@ namespace DungeonGame
                 jsonFormatter.WriteObject(fs, this);
             }
 
+        }
+
+        public Dictionary<string, string> returndict(string name)
+        {
+            Dictionary<string, string> temp = new Dictionary<string, string>();
+            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(Dictionary<string, string>));
+            string path = Directory.GetCurrentDirectory() + @"\languages\"+Properties.Settings.Default.Language+@"\"+name+".json";
+            if (File.Exists(path))
+            {
+                using (FileStream fs = new FileStream(path, FileMode.Open))
+                {
+                    temp = (Dictionary<string, string>)jsonFormatter.ReadObject(fs);
+                }
+            }
+            return temp;
         }
 
        
