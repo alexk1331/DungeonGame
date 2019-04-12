@@ -23,36 +23,17 @@ namespace DungeonGame
         public MainWindow()
         {
             InitializeComponent();
-            
+            GlobalMainViewModel.win = this;
+            GlobalMainViewModel.maintab = MainCntcont;
             SettingsApply.setproperties();
             SettingsApply.applyres(this);
-            SettingsApply.applylang(this);
+            //SettingsApply.applylang(this);
+            GlobalMainViewModel.switchview(typeof(VMStart));
         }
 
-        private void Exit_Click(object sender, RoutedEventArgs e)
+        private void MainMenu_Closed(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void Settings_Click(object sender, RoutedEventArgs e)
-        {
-            WinSettings sett = new WinSettings();
-            sett.Owner = this;
-            SettingsApply.applyres(sett);
-            SettingsApply.applylang(sett);
-            this.Hide();
-            
-            sett.ShowDialog();
-            this.Show();
-        }
-
-        private void New_Game_Click(object sender, RoutedEventArgs e)
-        {
-            WindowGameMain wn = new WindowGameMain();
-            wn.Owner = this;
-            this.Hide();
-            wn.ShowDialog();
-            this.Show();
+            Application.Current.Shutdown();
         }
     }
 }

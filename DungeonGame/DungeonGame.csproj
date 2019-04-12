@@ -68,13 +68,11 @@
     <Compile Include="ProgramSett.cs" />
     <Compile Include="SettingsApply.cs" />
     <Compile Include="Stats.cs" />
-    <Compile Include="WindowGameMain.xaml.cs">
-      <DependentUpon>WindowGameMain.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WindowMapViewModel.cs" />
-    <Compile Include="WinSettings.xaml.cs">
-      <DependentUpon>WinSettings.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="ViewBase.cs" />
+    <Compile Include="VMCharCreate.cs" />
+    <Compile Include="VMMap.cs" />
+    <Compile Include="VMSettings.cs" />
+    <Compile Include="VMStart.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -87,14 +85,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="WindowGameMain.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WinSettings.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

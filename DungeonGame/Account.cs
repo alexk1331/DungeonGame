@@ -10,7 +10,7 @@ namespace DungeonGame
     {
         public static Player currentplayer { get; set; }
         public static List<Map> maps{ get; set; }//list of generated maps for current player
-        public static string player_map { get; set; }
+        public static Map player_map;
         public struct ppos
         {
             public int x;
@@ -20,9 +20,18 @@ namespace DungeonGame
 
         static Account()
         {
-            maptile = new ppos();
-            maptile.x = 1;
-            maptile.y = 2;
+            maps = new List<Map>();
+            if(maps.Count<1)
+            {
+                maps.Add(new Map(0));//create basic map. CHANGE LATER TO CUSTOM!
+                player_map = maps[0];
+                maptile.x = player_map.enter.x;
+                maptile.y = player_map.enter.y;
+            }
+        }
+        public static void inicialize()
+        {
+
         }
 
         public static void save()

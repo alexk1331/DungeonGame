@@ -51,7 +51,6 @@ namespace DungeonGame
 
         public void setsettings(string wh, string l, bool f)
         {
-            
             string temp = "";
             for(int i=0;i<wh.Length;i++)
             {
@@ -72,12 +71,10 @@ namespace DungeonGame
         private void savesettings()
         {
             DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(ProgramSett));
-
             using (FileStream fs = new FileStream("settings.json", FileMode.OpenOrCreate))
             {
                 jsonFormatter.WriteObject(fs, this);
             }
-
         }
 
         public Dictionary<string, string> returndict(string name)

@@ -61,30 +61,12 @@ namespace DungeonGame
             {
                 psettings = new ProgramSett();
             }
-            
-            
         }
 
-       public static void globalsettingsapply()
-        {
-            setproperties();
-            foreach (Window win in App.Current.Windows)
-            {
-                applyres(win);
-                applylang(win);
-            }
-        }
        public static void applyres(Window win)
         {
-            if(win.Owner==null)
-            {
-                win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            }
-            else
-            {
-                win.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-            }
-            if(Properties.Settings.Default.Fullscreen==true)
+            win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            if (Properties.Settings.Default.Fullscreen == true)
             {
                 win.ShowActivated = true;
                 win.WindowState = WindowState.Maximized;
@@ -97,47 +79,17 @@ namespace DungeonGame
             }
         }
 
-        public static void applylang(Window win)
+        public static void applylang(List<FrameworkElement> clist)
         {
-            Panel mainc = (Panel)win.Content;
-            foreach(FrameworkElement cc in LogicalTreeHelper.GetChildren(win))
+            foreach(FrameworkElement cc in clist)
             {
                 applylangtoel(cc);
             }
         }
 
-        private static void applylangtoel(FrameworkElement cc)
+        public static string applylangtoel(FrameworkElement cc)
         {
-            if(VisualTreeHelper.GetChildrenCount(cc)>0)
-            {
-                for (int i=0; i<VisualTreeHelper.GetChildrenCount(cc);i++)
-                {
-                    applylangtoel((FrameworkElement)VisualTreeHelper.GetChild(cc, i));
-                }
-            }
-            foreach(KeyValuePair<string, string> text in controls)
-            {
-                if(cc.Name==text.Key)
-                {
-                    string t = cc.GetType().ToString();
-
-                    switch (t) 
-                    {
-                        case "System.Windows.Controls.Button":
-                            Button b = (Button)cc;
-                            b.Content = text.Value;
-                            break;
-                        case "System.Windows.Controls.TextBlock":
-                            TextBlock tb = (TextBlock)cc;
-                            tb.Text = text.Value;
-                            break;
-                        case "System.Windows.Controls.CheckBox":
-                            CheckBox cb = (CheckBox)cc;
-                            cb.Content = text.Value;
-                            break;
-                    }
-                }
-            }
+            return controls.FirstOrDefault(x => x.Key == cc.Name).Value;
         }
 
         public static void setproperties()
